@@ -23,12 +23,6 @@ export default function Hero() {
     <section className="section" style={{ paddingTop: "clamp(5rem, 12vw, 8rem)" }}>
       <div className="container">
         <div style={{ maxWidth: "48rem" }}>
-          <p
-            className="badge"
-            style={{ marginBottom: "1.5rem" }}
-          >
-            AIエンジニア
-          </p>
           <h1
             style={{
               fontSize: "clamp(2.5rem, 6vw, 4rem)",
@@ -36,23 +30,29 @@ export default function Hero() {
               lineHeight: 1.1,
               letterSpacing: "-0.03em",
               color: "var(--color-text)",
-              marginBottom: "1.5rem",
+              marginBottom: "1rem",
             }}
           >
             Yuji
           </h1>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem", marginBottom: "1.5rem" }}>
+            <p style={{ fontSize: "clamp(1rem, 2vw, 1.25rem)", color: "var(--color-text-secondary)", lineHeight: 1.8 }}>
+              東洋大学 情報連携学部 (INIAD) 学部3年生。
+            </p>
+            <p style={{ fontSize: "clamp(1rem, 2vw, 1.25rem)", color: "var(--color-text-secondary)", lineHeight: 1.8 }}>
+              ソフトウェアとデータサイエンスを専攻。
+            </p>
+            <p style={{ fontSize: "clamp(1rem, 2vw, 1.25rem)", color: "var(--color-text-secondary)", lineHeight: 1.8 }}>
+              AIエンジニアとして、インターンや個人開発で技術力を磨いています。
+            </p>
+          </div>
+
           <p
-            style={{
-              fontSize: "clamp(1rem, 2vw, 1.25rem)",
-              color: "var(--color-text-secondary)",
-              lineHeight: 1.8,
-              marginBottom: "2rem",
-              maxWidth: "36rem",
-            }}
+            className="badge"
+            style={{ marginBottom: "1.5rem" }}
           >
-            東洋大学 情報連携学部 (INIAD) 学部3年生。
-            ソフトウェアとデータサイエンスを専攻。
-            AIエンジニアとして、インターンや個人開発で技術力を磨いています。
+            AIエンジニア
           </p>
 
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
