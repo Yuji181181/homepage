@@ -151,13 +151,13 @@ body {
 
 .timeline {
   position: relative;
-  padding-left: 3.5rem;
+  padding-left: 4rem;
 }
 
 .timeline::before {
   content: "";
   position: absolute;
-  left: 1.25rem;
+  left: 1.5rem;
   top: 0;
   bottom: 0;
   width: 2px;
@@ -166,7 +166,7 @@ body {
 
 .timeline-item {
   position: relative;
-  padding-bottom: 2rem;
+  padding-bottom: 2.5rem;
 }
 
 .timeline-item:last-child {
@@ -176,13 +176,13 @@ body {
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: 0.875rem;
-  top: 0.5rem;
-  width: 12px;
-  height: 12px;
+  left: 1.125rem;
+  top: 0.25rem;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: var(--color-primary);
-  border: 3px solid rgba(26, 35, 50, 0.8);
+  border: 2px solid rgba(26, 35, 50, 0.8);
   box-shadow: 0 0 0 2px var(--color-primary);
   z-index: 1;
 }
@@ -345,10 +345,14 @@ body {
   }
 
   .timeline {
-    padding-left: 1.5rem;
+    padding-left: 3.5rem;
+  }
+
+  .timeline::before {
+    left: 1.5rem;
   }
 
   .timeline-item::before {
-    left: -0.15rem;
+    left: 1.125rem;
   }
 }
