@@ -115,16 +115,53 @@ CLOUDFLARE_D1_TOKEN=<your-d1-token>
 
 ### D1データベース作成
 ```bash
-wrangler d1 create homepage-db
+bunx wrangler d1 create homepage-db
 ```
 
 ### R2バケット作成
 ```bash
-wrangler r2 bucket create homepage-assets
+bunx wrangler r2 bucket create homepage-assets
 ```
 
 ### マイグレーション適用
 ```bash
 bun run db:generate
-wrangler d1 migrations apply homepage-db
+bunx wrangler d1 migrations apply homepage-db --remote
 ```
+
+## 開発時の注意点
+
+### ⚠️ 重要なポイント
+
+1. **コマンド実行は必ず `bunx` を使用**
+   - `package.json` の `devEngines` で `bun` を指定しているため、`npx`（npm）は使用不可
+   - 例: `bunx wrangler deploy`、`bunx vp fmt`
+
+2. **oxfmt は Windows で動作しない場合がある**
+   - Windows の Application Control Policy が ネイティブバインディングをブロックする
+   - CI (Ubuntu) では正常に動作する
+   - ローカルでフォーマットが必要な場合は、WSL または Linux/macOS 環境を使用
+
+3. **Cloudflare Vite プラグインの動作**
+   - `@cloudflare/vite-plugin` がアセットのバンドルとデプロイを自動処理
+   - `wrangler.jsonc` に `assets` バインディングを記載しない（プラグインが自動設定）
+   - ビルド出力は `dist/client` と `dist/server`（`dist/homepage` はデプロイ時に自動生成）
+
+4. **デプロイ方法**
+   - CD ワークフローは `bunx wrangler deploy` をルートディレクトリから実行
+   - Cloudflare Vite プラグインが自動的にバンドルしてデプロイ
+
+### GitHub Secrets（デプロイに必要）
+
+| Secret名 | 説明 |
+|-----------|------|
+| `CLOUDFLARE_API_TOKEN` | Cloudflare Dashboard → API Tokens で作成 |
+| `CLOUDFLARE_ACCOUNT_ID` | `bunx wrangler whoami` で確認可能 |
+
+### ローカル開発サーバー
+
+```bash
+bun run dev
+```
+
+D1 バインディングは `.dev.vars` の環境変数から自動的に読み込まれます。
