@@ -1,4 +1,32 @@
-import { FaGithub, FaXTwitter, FaEnvelope } from "react-icons/fa6";
+import { FaGithub, FaXTwitter, FaEnvelope, FaPen, FaBookOpen } from "react-icons/fa6";
+
+const CONTACT_LINKS = [
+  {
+    icon: FaGithub,
+    label: "GitHub",
+    href: "https://github.com/Yuji181181",
+  },
+  {
+    icon: FaXTwitter,
+    label: "X",
+    href: "https://x.com/a_su114514",
+  },
+  {
+    icon: FaPen,
+    label: "Qiita",
+    href: "https://qiita.com/Yuji181181",
+  },
+  {
+    icon: FaBookOpen,
+    label: "Zenn",
+    href: "https://zenn.dev/yuji181181",
+  },
+  {
+    icon: FaEnvelope,
+    label: "Email",
+    href: "mailto:hasegawa.iniad@gmail.com",
+  },
+] as const;
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -6,28 +34,23 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <p>&copy; {year} Yuji. All rights reserved.</p>
         <div className="footer-links">
-          <a
-            href="https://github.com/Yuji181181"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <FaGithub size={20} />
-          </a>
-          <a
-            href="https://x.com/a_su114514"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="X (Twitter)"
-          >
-            <FaXTwitter size={20} />
-          </a>
-          <a href="mailto:hasegawa.iniad@gmail.com" aria-label="Email">
-            <FaEnvelope size={20} />
-          </a>
+          {CONTACT_LINKS.map(({ icon: Icon, label, href }) => (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith("mailto:") ? undefined : "_blank"}
+              rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+              aria-label={label}
+            >
+              <Icon size={20} />
+              <span>{label}</span>
+            </a>
+          ))}
         </div>
+        <p style={{ marginTop: "1.5rem" }}>
+          &copy; {year} Yuji. All rights reserved.
+        </p>
       </div>
     </footer>
   );

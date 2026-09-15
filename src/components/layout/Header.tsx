@@ -5,7 +5,6 @@ const NAV_ITEMS = [
   { label: "活動経歴", href: "#activities" },
   { label: "制作物", href: "#projects" },
   { label: "技術記事", href: "#articles" },
-  { label: "Contact", href: "#contact" },
 ] as const;
 
 export default function Header() {
