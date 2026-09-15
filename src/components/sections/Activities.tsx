@@ -38,7 +38,6 @@ export default function Activities() {
     <section
       id="activities"
       className="section"
-      style={{ background: "var(--color-bg-secondary)" }}
     >
       <div className="container">
         <h2 className="section-title">活動経歴</h2>

@@ -39,7 +39,7 @@ const INTERNSHIPS: Internship[] = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="section">
+    <section id="experience" className="section" style={{ background: "rgba(255, 255, 255, 0.03)" }}>
       <div className="container">
         <h2 className="section-title">インターン</h2>
         <p className="section-subtitle">Internship</p>

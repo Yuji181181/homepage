@@ -44,7 +44,7 @@ const PROJECTS: Project[] = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="section">
+    <section id="projects" className="section" style={{ background: "rgba(255, 255, 255, 0.03)" }}>
       <div className="container">
         <h2 className="section-title">制作物</h2>
         <p className="section-subtitle">Projects</p>
