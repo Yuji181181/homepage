@@ -1,6 +1,7 @@
 // @ts-nocheck - vite-plus types conflict with vite types
 import { defineConfig } from 'vite-plus'
 import { devtools } from '@tanstack/devtools-vite'
+import { cloudflare } from '@cloudflare/vite-plugin'
 
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 
@@ -14,7 +15,7 @@ const config = defineConfig({
   fmt: {},
   lint: {"jsPlugins":[{"name":"vite-plus","specifier":"vite-plus/oxlint-plugin"}],"rules":{"vite-plus/prefer-vite-plus-imports":"error"},"options":{"typeAware":true,"typeCheck":true}},
   resolve: { tsconfigPaths: true },
-  plugins: [devtools(), tailwindcss(), tanstackStart(), viteReact()],
+  plugins: [devtools(), tailwindcss(), cloudflare(), tanstackStart(), viteReact()],
 })
 
 export default config
