@@ -2,8 +2,10 @@
   "name": "homepage",
   "compatibility_date": "2025-01-01",
   "compatibility_flags": ["nodejs_compat"],
+  "main": "dist/server/server.js",
   "assets": {
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    "directory": "dist/client"
   },
   "d1_databases": [
     {
