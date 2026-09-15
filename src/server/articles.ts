@@ -82,7 +82,8 @@ export const fetchArticles = createServerFn({ method: "GET" }).handler(
               `https://zenn.dev/api/articles/${item.slug}`,
             );
             if (detailRes.ok) {
-              const detail = await detailRes.json();
+              const detail: { article?: { body_html?: string } } =
+                await detailRes.json();
               const bodyHtml = detail.article?.body_html || "";
               const bodyText = extractTextFromHtml(bodyHtml);
               if (bodyText.length > 0) {
