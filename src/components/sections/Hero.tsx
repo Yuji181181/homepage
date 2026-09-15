@@ -74,7 +74,7 @@ export default function Hero() {
 
           <div style={{ marginTop: "3rem" }}>
             <a
-              href="#about"
+              href="#experience"
               style={{
                 display: "inline-flex",
                 alignItems: "center",

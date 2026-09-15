@@ -1,8 +1,7 @@
 import { Link } from "@tanstack/react-router";
 
 const NAV_ITEMS = [
-  { label: "自己紹介", href: "#about" },
-  { label: "実務経験", href: "#experience" },
+  { label: "インターン", href: "#experience" },
   { label: "活動経歴", href: "#activities" },
   { label: "制作物", href: "#projects" },
   { label: "技術記事", href: "#articles" },

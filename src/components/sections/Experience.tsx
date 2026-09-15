@@ -6,32 +6,32 @@ interface Internship {
 
 const INTERNSHIPS: Internship[] = [
   {
-    date: "長期",
+    date: "2025年12月〜",
     title: "NAXA",
     description: "詳細は後で追加",
   },
   {
-    date: "",
+    date: "2025年10月〜12月",
     title: "Medley",
     description: "詳細は後で追加",
   },
   {
-    date: "",
+    date: "2025年9月〜10月",
     title: "3-shake",
     description: "詳細は後で追加",
   },
   {
-    date: "",
+    date: "2025年8月〜9月",
     title: "Sansan",
     description: "詳細は後で追加",
   },
   {
-    date: "",
+    date: "2025年7月〜8月",
     title: "kubell",
     description: "詳細は後で追加",
   },
   {
-    date: "",
+    date: "2025年6月〜7月",
     title: "DMM.com",
     description: "詳細は後で追加",
   },
