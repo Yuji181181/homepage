@@ -1,9 +1,9 @@
 {
   "name": "homepage",
   "compatibility_date": "2025-01-01",
-  "main": ".output/server/index.mjs",
+  "main": "dist/server/server.js",
   "assets": {
-    "directory": ".output/public"
+    "directory": "dist/client"
   },
   "d1_databases": [
     {
