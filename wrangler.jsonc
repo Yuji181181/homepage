@@ -2,7 +2,7 @@
   "name": "homepage",
   "compatibility_date": "2025-01-01",
   "compatibility_flags": ["nodejs_compat"],
-  "main": "dist/server/server.js",
+  "main": "src/entry.worker.ts",
   "assets": {
     "directory": "dist/client"
   },
