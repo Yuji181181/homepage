@@ -176,7 +176,7 @@ body {
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: 1.125rem;
+  left: -2.875rem;
   top: 0.25rem;
   width: 10px;
   height: 10px;
