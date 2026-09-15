@@ -15,8 +15,6 @@ jobs:
         with:
           bun-version: latest
       - run: bun install
-      - name: Format code
-        run: bunx vp fmt
       - run: bun run build
       - name: Deploy to Cloudflare Workers
         run: bunx wrangler deploy
