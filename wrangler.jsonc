@@ -9,7 +9,8 @@
     {
       "binding": "DB",
       "database_name": "homepage-db",
-      "database_id": "<D1_DATABASE_ID>"
+      "database_id": "38c4f25c-29d0-4f72-b0ba-437bcfd53311",
+      "migrations_dir": "src/db/migrations"
     }
   ],
   "r2_buckets": [
