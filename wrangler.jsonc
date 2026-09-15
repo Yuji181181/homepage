@@ -1,0 +1,21 @@
+{
+  "name": "homepage",
+  "compatibility_date": "2025-01-01",
+  "main": ".output/server/index.mjs",
+  "assets": {
+    "directory": ".output/public"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "homepage-db",
+      "database_id": "<D1_DATABASE_ID>"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "R2",
+      "bucket_name": "homepage-assets"
+    }
+  ]
+}
