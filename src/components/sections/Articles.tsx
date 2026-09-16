@@ -1,16 +1,5 @@
-import { useEffect, useState } from "react";
 import { SiQiita, SiZenn } from "react-icons/si";
-import { fetchArticles } from "@/server/articles";
-
-interface Article {
-  title: string;
-  url: string;
-  platform: "qiita" | "zenn";
-  date: string;
-  tags: string[];
-  summary: string;
-  image?: string;
-}
+import { QIITA_ARTICLES, ZENN_ARTICLES, type Article } from "@/data/articles";
 
 function ArticleCard({ article }: { article: Article }) {
   return (
@@ -20,27 +9,25 @@ function ArticleCard({ article }: { article: Article }) {
       rel="noopener noreferrer"
       className="article-card"
     >
-      {article.image && (
-        <div
+      <div
+        style={{
+          width: "100%",
+          height: "180px",
+          borderRadius: "0.75rem",
+          overflow: "hidden",
+          marginBottom: "1rem",
+        }}
+      >
+        <img
+          src={article.image}
+          alt=""
           style={{
             width: "100%",
-            height: "180px",
-            borderRadius: "0.75rem",
-            overflow: "hidden",
-            marginBottom: "1rem",
+            height: "100%",
+            objectFit: "cover",
           }}
-        >
-          <img
-            src={article.image}
-            alt=""
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
-          />
-        </div>
-      )}
+        />
+      </div>
 
       <div
         style={{
@@ -102,115 +89,77 @@ function ArticleCard({ article }: { article: Article }) {
 }
 
 export default function Articles() {
-  const [qiitaArticles, setQiitaArticles] = useState<Article[]>([]);
-  const [zennArticles, setZennArticles] = useState<Article[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchArticles().then((data) => {
-      setQiitaArticles(data.qiita);
-      setZennArticles(data.zenn);
-      setLoading(false);
-    });
-  }, []);
-
   return (
     <section id="articles" className="section">
       <div className="container">
         <h2 className="section-title">技術記事</h2>
         <p className="section-subtitle">Tech Articles</p>
 
-        {loading ? (
-          <div
-            style={{
-              textAlign: "center",
-              padding: "3rem",
-              color: "var(--color-text-secondary)",
-            }}
-          >
-            読み込み中...
-          </div>
-        ) : (
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "3rem" }}
-          >
-            {/* Qiita Section */}
-            {qiitaArticles.length > 0 && (
-              <div>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.75rem",
-                    marginBottom: "1.5rem",
-                  }}
-                >
-                  <SiQiita size={24} color="#55c637" />
-                  <h3 style={{ fontSize: "1.25rem", fontWeight: 700 }}>
-                    Qiita
-                  </h3>
-                </div>
-
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns:
-                      "repeat(auto-fill, minmax(300px, 1fr))",
-                    gap: "1.5rem",
-                  }}
-                >
-                  {qiitaArticles.map((article) => (
-                    <ArticleCard key={article.url} article={article} />
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Zenn Section */}
-            {zennArticles.length > 0 && (
-              <div>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.75rem",
-                    marginBottom: "1.5rem",
-                  }}
-                >
-                  <SiZenn size={24} color="#3ea8ff" />
-                  <h3 style={{ fontSize: "1.25rem", fontWeight: 700 }}>
-                    Zenn
-                  </h3>
-                </div>
-
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns:
-                      "repeat(auto-fill, minmax(300px, 1fr))",
-                    gap: "1.5rem",
-                  }}
-                >
-                  {zennArticles.map((article) => (
-                    <ArticleCard key={article.url} article={article} />
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {qiitaArticles.length === 0 && zennArticles.length === 0 && (
+        <div style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
+          {/* Qiita Section */}
+          {QIITA_ARTICLES.length > 0 && (
+            <div>
               <div
                 style={{
-                  textAlign: "center",
-                  padding: "3rem",
-                  color: "var(--color-text-secondary)",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.75rem",
+                  marginBottom: "1.5rem",
                 }}
               >
-                記事が見つかりませんでした。
+                <SiQiita size={24} color="#55c637" />
+                <h3 style={{ fontSize: "1.25rem", fontWeight: 700 }}>
+                  Qiita
+                </h3>
               </div>
-            )}
-          </div>
-        )}
+
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns:
+                    "repeat(auto-fill, minmax(300px, 1fr))",
+                  gap: "1.5rem",
+                }}
+              >
+                {QIITA_ARTICLES.map((article) => (
+                  <ArticleCard key={article.url} article={article} />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Zenn Section */}
+          {ZENN_ARTICLES.length > 0 && (
+            <div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.75rem",
+                  marginBottom: "1.5rem",
+                }}
+              >
+                <SiZenn size={24} color="#3ea8ff" />
+                <h3 style={{ fontSize: "1.25rem", fontWeight: 700 }}>
+                  Zenn
+                </h3>
+              </div>
+
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns:
+                    "repeat(auto-fill, minmax(300px, 1fr))",
+                  gap: "1.5rem",
+                }}
+              >
+                {ZENN_ARTICLES.map((article) => (
+                  <ArticleCard key={article.url} article={article} />
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

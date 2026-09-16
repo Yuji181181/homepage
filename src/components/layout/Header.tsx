@@ -1,5 +1,3 @@
-import { Link } from "@tanstack/react-router";
-
 const NAV_ITEMS = [
   { label: "インターン", href: "#experience" },
   { label: "活動経歴", href: "#activities" },
@@ -11,9 +9,9 @@ export default function Header() {
   return (
     <header className="header">
       <div className="container header-inner">
-        <Link to="/" className="header-logo">
+        <a href="/" className="header-logo">
           Yuji
-        </Link>
+        </a>
 
         <nav className="header-nav">
           {NAV_ITEMS.map((item) => (
