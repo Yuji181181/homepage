@@ -16,6 +16,8 @@ jobs:
           bun-version: latest
       - run: bun install
       - run: bun run build
+      - name: Remove generated wrangler config for Pages compatibility
+        run: rm -f dist/client/wrangler.json
       - name: Deploy to Cloudflare Pages
         run: bunx wrangler pages deploy dist/client --project-name=Yuji181181
         env:
