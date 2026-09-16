@@ -19,7 +19,7 @@ const TECH_IMAGES = [
 export const QIITA_ARTICLES: Article[] = [
   {
     title: "AIと個人情報保護",
-    url: "https://qiita.com/Yuji181181/items/...",
+    url: "https://qiita.com/Yuji181181/items/dacfea55a8382e8d865b",
     date: "2025/...",
     tags: ["AI", "個人情報保護", "法律"],
     summary: "近年、生成AIの普及により、業務や開発でAIを利用する機会が激増しています。しかし、AIを扱う上で避けて通れないのが「個人情報保護」の観点です。",
@@ -27,7 +27,7 @@ export const QIITA_ARTICLES: Article[] = [
   },
   {
     title: "AIと人間中心主義の崩壊",
-    url: "https://qiita.com/Yuji181181/items/...",
+    url: "https://qiita.com/Yuji181181/items/6e1edb6e4cd12336c6e2",
     date: "2025/...",
     tags: ["AI", "倫理", "社会"],
     summary: "AI技術の発展により、人間中心主義の考え方が変化を迎えています。テクノロジーと人間の関係性を再考する必要があります。",
@@ -35,7 +35,7 @@ export const QIITA_ARTICLES: Article[] = [
   },
   {
     title: "内閣府の「プリンシプル・コード（仮称）（案）」についての考察",
-    url: "https://qiita.com/Yuji181181/items/...",
+    url: "https://qiita.com/Yuji181181/items/e41ef98504cea18bb055",
     date: "2025/...",
     tags: ["AI", "ガバナンス", "政策"],
     summary: "内閣府が公開した「プリンシプル・コード（案）」について、AI倫理の観点から考察します。",
@@ -43,7 +43,7 @@ export const QIITA_ARTICLES: Article[] = [
   },
   {
     title: "AIと著作権の基本",
-    url: "https://qiita.com/Yuji181181/items/...",
+    url: "https://qiita.com/Yuji181181/items/2da3bab7124618672b53",
     date: "2025/...",
     tags: ["AI", "著作権", "法律"],
     summary: "AIが生成したコンテンツの著作権はどうなるのか？AIと著作権の基本的な考え方を整理します。",
@@ -51,7 +51,7 @@ export const QIITA_ARTICLES: Article[] = [
   },
   {
     title: "LLM推論入門",
-    url: "https://qiita.com/Yuji181181/items/...",
+    url: "https://qiita.com/Yuji181181/items/a87bb3ce9e4ae6314e1a",
     date: "2025/...",
     tags: ["LLM", "AI", "推論"],
     summary: "大規模言語モデル（LLM）の推論メカニズムについて、基礎から解説します。",
@@ -59,7 +59,7 @@ export const QIITA_ARTICLES: Article[] = [
   },
   {
     title: "言語モデルの歴史",
-    url: "https://qiita.com/Yuji181181/items/...",
+    url: "https://qiita.com/Yuji181181/items/6ce78ec79445639f20f5",
     date: "2025/...",
     tags: ["LLM", "AI", "NLP"],
     summary: "言語モデルの発展の歴史を振り返り、現代のLLMに至るまでの流れを解説します。",
@@ -67,7 +67,7 @@ export const QIITA_ARTICLES: Article[] = [
   },
   {
     title: "AIガバナンス入門",
-    url: "https://qiita.com/Yuji181181/items/...",
+    url: "https://qiita.com/Yuji181181/items/fea76aa0470646284634",
     date: "2025/...",
     tags: ["AI", "ガバナンス", "規制"],
     summary: "AIガバナンスの基本概念と、企業が遵守すべきルールについて解説します。",
@@ -75,7 +75,7 @@ export const QIITA_ARTICLES: Article[] = [
   },
   {
     title: "AI倫理入門",
-    url: "https://qiita.com/Yuji181181/items/...",
+    url: "https://qiita.com/Yuji181181/items/53b963dccb1069a8a734",
     date: "2025/...",
     tags: ["AI", "倫理", "社会"],
     summary: "AI倫理の基本原則と、開発者が意識すべき倫理的課題について解説します。",
