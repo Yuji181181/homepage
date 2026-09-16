@@ -1,7 +1,3 @@
-# Yuji's Portfolio
-
-インターン書類選考用のポートフォリオサイト。
-
 ## URL
 
 https://yuji181181.pages.dev
@@ -43,11 +39,3 @@ bun run test
 # Lint
 bun run lint
 ```
-
-## デプロイ
-
-mainブランチへのpushで自動的にCloudflare Pagesにデプロイされます。
-
-## ライセンス
-
-MIT
